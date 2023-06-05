@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add ScrollMagic JavaScript library -->
+<script src="https://unpkg.com/scrollmagic@2.0.8/scrollmagic/uncompressed/ScrollMagic.js"></script>
+<!-- Add GSAP (optional) -->
+<script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="trigger"></div>
+    <div id="fade-in-element">hello there</div>
+
+    <script>
+        // Initialize ScrollMagic controller
+        var controller = new ScrollMagic.Controller();
+
+        // Create a scene
+        new ScrollMagic.Scene({
+            triggerElement: "#trigger",
+            triggerHook: "onEnter",
+            offset: 200 // Adjust the offset as needed
+        })
+            .setTween(TweenMax.fromTo("#fade-in-element", 1, { opacity: 0 })) // Define the fade-in animation
+            .addTo(controller);
+
+    </script>
+
+
+
+</body>
+
+</html>
